@@ -1,0 +1,46 @@
+{
+    "name": "copy-name-of-current-branch",
+    "displayName": "Copy name of current git branch",
+    "description": "Copy name of current git branch to system clipboard.",
+    "version": "0.0.1",
+    "publisher": "dkaba",
+    "engines": {
+        "vscode": "^1.17.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.copyBranchName"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dKab/Copy-current-branch-vs-code-extension.git"
+    },
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.copyBranchName",
+                "title": "Copy name of current branch"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.5.3",
+        "vscode": "^1.1.5",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "copy-paste": "^1.3.0",
+        "simple-git": "^1.80.1"
+    }
+}
